@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS blog_db;
+CREATE TABLE blog_db;
