@@ -4,13 +4,13 @@ module.exports = {
       return date.toLocaleDateString();
     },
     post_preview: (text) => {
-        if (text.length<100){
+        if (text.length<500){
             return text;
         } else {
-            if (text.slice(0,99)[-1]==='.'){
-                return `${text.slice(0,99)}..`;
+            if (text.slice(0,499)[-1]==='.'){
+                return `${text.slice(0,499)}..`;
             } else {
-                return `${text.slice(0,99)}...`;
+                return `${text.slice(0,499)}...`;
             };
         };
     }
