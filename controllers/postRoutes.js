@@ -10,7 +10,8 @@ router.get('/:id', async (req, res)=>{
                     attributes: ['username']
                 },
                 {
-                    model: Comment
+                    model: Comment,
+                    include: [{ model: User }]
                 }
             ]
         });
@@ -18,10 +19,10 @@ router.get('/:id', async (req, res)=>{
             res.redirect('../');
         };
         const post = postData.get({ plain: true });
-        res.render('post', {
+        res.render('post-page', {
             ...post,
             logged_in: req.session.logged_in,
-            currentUser: req.session.user.id
+            // currentUser: req.session.user.id
         });
     } catch(err){
         res.status(500).json(err);

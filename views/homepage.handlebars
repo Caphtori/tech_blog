@@ -1,22 +1,22 @@
-<div class="hp-container">
+<div class="container">
     {{#each posts}}
-    <div class="hp-post_card">
-        <div class="hp-post-header">
+    <div class="post_card">
+        <div class="post-header">
             <h2>
                 <a href="/p/{{id}}">{{title}}</a>
             </h2>
         </div>
-        <div class="hp-post-details">
-            <div class="hp-namecard">
+        <div class="post-details">
+            <div class="namecard">
                 <span>By:</span>
                 <a href="/u/{{user.username}}">{{user.username}}</a>
             </div>
             <p>Posted: {{format_date date_created}}</p>
         </div>
-        <div class="post-preview-card">
+        <div class="post-body">
             <p>{{post_preview body}}</p>
         </div>
-        <div class="hp-post-footer">
+        <div class="post-footer">
             {{#if comments.length}}
             <p>{{comments.length}} Comments</p>
             {{else}}

@@ -1,0 +1,27 @@
+<section class="post_card">
+    <div class="post-details">
+        <div class="namecard">
+            <span>By:</span>
+            <a href="/u/{{user.username}}">{{user.username}}</a>
+        </div>
+        <p>Posted: {{format_date date_created}}</p>
+    </div>
+    <div class="post-body">
+        {{body}}
+    </div>
+    <div class="post-footer">
+        {{#if logged_in}}
+        {{!-- If statement for currentUser --}}
+        <ul>
+            <li>
+                <a href="/api/post/edit/{{id}}">Edit</a>
+            </li>
+            <li>
+                <a href="/api/post/delete/{{id}}">Delete</a>
+            </li>
+        </ul>
+        {{else}}
+        <a href="/login">Login to participate</a>
+        {{/if}}
+    </div>
+</section>

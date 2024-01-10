@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authenticate = require('../utils/auth');
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 router.get('/', async (req, res)=>{
     try{
@@ -11,7 +11,7 @@ router.get('/', async (req, res)=>{
             //         // attributes: ['username']
             //     }
             // ]
-            include: [User]
+            include: [User, Comment]
         });
         // postData = postData.sort((a,b)=>a.date_created-b.date_created).reverse();
         // postData.forEach((post)=>{
