@@ -1,0 +1,26 @@
+<section class="post-page-container">
+    <section class="post-proper">
+    {{> single-post}}
+    </section>
+    {{#if logged_in}}
+    <section class="comment-input">
+        <h3>Leave a Comment:</h3>
+        <textarea name="comment-input" id="comment-input" cols="30" rows="10"></textarea>
+        <button id="comment-submit" class="submit-btn" >Submit</button>
+    </section>
+    {{/if}}
+    <section class="comment-section">
+        <div class="comments-header">
+            <h2>Comments</h2>
+        </div>
+        {{#if comments}}
+            {{#each comments}}
+            {{> single-comment}}
+            {{/each}}
+        {{else}}
+        <div class="no-comments">
+            <h3>No comments yet...</h3>
+        </div>
+        {{/if}}
+    </section>
+</section>
