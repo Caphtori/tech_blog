@@ -1,37 +1,23 @@
 [
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at feugiat eros. Vivamus in ultrices arcu. Proin ut odio ornare, luctus lacus sit amet, feugiat enim. Fusce cursus, est eget placerat pulvinar, nunc dui luctus magna, vitae commodo eros leo sed purus. Aliquam rutrum mauris sit amet hendrerit lobortis. Praesent.",
-        "user_id": 2,
-        "post_id": 3
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at feugiat eros. Vivamus in ultrices arcu. Proin ut odio ornare, luctus lacus sit amet, feugiat enim. Fusce cursus, est eget placerat pulvinar, nunc dui luctus magna, vitae commodo eros leo sed purus. Aliquam rutrum mauris sit amet hendrerit lobortis. Praesent."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum, ante et pretium viverra, ligula turpis auctor nisl, sed fermentum dui libero quis justo. Vestibulum eu consectetur mi, sit amet.",
-        "user_id": 1,
-        "post_id": 2
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum, ante et pretium viverra, ligula turpis auctor nisl, sed fermentum dui libero quis justo. Vestibulum eu consectetur mi, sit amet."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper elit sed nunc varius feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus nisi, sagittis nec congue scelerisque, porta quis diam. Pellentesque mattis ut est ac lacinia. Nullam eleifend nisi nisi, ut mollis.",
-        "user_id": 2,
-        "post_id": 2
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper elit sed nunc varius feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus nisi, sagittis nec congue scelerisque, porta quis diam. Pellentesque mattis ut est ac lacinia. Nullam eleifend nisi nisi, ut mollis."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac molestie augue. Phasellus sit amet.",
-        "user_id": 3,
-        "post_id": 1
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac molestie augue. Phasellus sit amet."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur.",
-        "user_id": 1,
-        "post_id": 3
+        "body": "Lorem ipsum dolor sit amet, consectetur."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae orci ac lectus accumsan pellentesque sit amet non mauris. Suspendisse ut tortor nec nunc interdum luctus. Praesent rutrum varius ex at convallis. Morbi egestas nisi id sodales pretium. In viverra, dui eget convallis porttitor, ex lacus facilisis justo, eu lacinia ante dolor at ipsum. Aliquam placerat sapien mi.",
-        "user_id": 2,
-        "post_id": 1
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae orci ac lectus accumsan pellentesque sit amet non mauris. Suspendisse ut tortor nec nunc interdum luctus. Praesent rutrum varius ex at convallis. Morbi egestas nisi id sodales pretium. In viverra, dui eget convallis porttitor, ex lacus facilisis justo, eu lacinia ante dolor at ipsum. Aliquam placerat sapien mi."
     },
     {
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque nulla, interdum vitae rutrum eu, aliquet rhoncus ligula. Aliquam lacinia diam in sollicitudin convallis. Nunc vitae leo ante. Morbi.",
-        "user_id": 2,
-        "post_id": 3
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque nulla, interdum vitae rutrum eu, aliquet rhoncus ligula. Aliquam lacinia diam in sollicitudin convallis. Nunc vitae leo ante. Morbi."
     }
 ]

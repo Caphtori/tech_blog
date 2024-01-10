@@ -46,3 +46,5 @@ router.get('/:username', userCheck, async (req, res)=>{
         res.status(500).json(err);
     };
 });
+
+module.exports = router;
