@@ -1,0 +1,203 @@
+:root {
+    --color1: navy;
+    --color2: whitesmoke;
+    --color3: black;
+    --color4: rgb(46, 179, 241);
+    --color5: grey;
+    
+    --hover: rgb(255, 242, 0);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color2);
+    color: var(--color3);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color1);
+    color: var(--color2);
+    border-bottom: 2px solid black;
+    justify-content: space-between;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: var(--hover);
+}
+
+/* Main */
+.home-nav{
+    display: flex;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color2);
+}
+
+.home-nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    width: 100vw;
+}
+/* /Main */
+
+
+/* Home */
+.hp-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hp-post_card{
+    display: flex;
+    flex-direction: column;
+}
+
+.hp-post-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color4);
+    color: var(--color3);
+    border: 2px solid black;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+/* .hp-post-header:hover{
+    color: yellow;
+} */
+
+.hp-post-details {
+    background-color: var(--color5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-top: none;
+    padding: .25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.hp-post-details a{
+    color: blue;
+}
+
+/* .hp-post-details a:hover{
+    color: yellow;
+} */
+
+.post-preview-card{
+    display: flex;
+    font-size: 1.25rem;
+    padding: 1rem;
+    border: 2px solid black;
+    border-top: none;
+}
+
+.hp-post-footer{
+    background-color: var(--color5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid black;
+    border-top: none;
+    padding: .25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+/* /Home */
+
+
+/* Login */
+.form-card{
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color4);
+    padding: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border: 2px solid black;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-top: none;
+    gap: 3rem;
+    padding: 2rem;
+    font-size: 1.25rem;
+}
+
+.form-entry{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.submit-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.submit-btn{
+    padding: 1rem;
+    background-color: var(--color4);
+    border-radius: 15px;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    background-color: var(--hover);
+}
+
+.login-signup{
+    display: flex;
+    flex: column;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+.login-signup a{
+    color: blue
+}
+/* /Login */
