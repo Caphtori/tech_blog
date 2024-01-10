@@ -17,12 +17,12 @@ router.post('/', authorization, async (req, res) => {
 
 router.put('/edit/:id', authorization, async (req, res)=>{
   try{
-    const postData = Comment.update(req.body, {
+    const commentData = Comment.update(req.body, {
       where: {
         id: req.params.id
       }
     });
-    if (!postData){
+    if (!commentData){
       res.status(404).json({ message: "Comment not found." });
       return
     }
@@ -33,12 +33,12 @@ router.put('/edit/:id', authorization, async (req, res)=>{
 
 router.delete('/delete/:id', authorization, async (req, res)=>{
   try{
-    const postData = Comment.destroy({
+    const commentData = Comment.destroy({
       where: {
         id: req.params.id
       }
     });
-    if (!postData){
+    if (!commentData){
       res.status(404).json({ message: "Comment not found." });
       return
     }
