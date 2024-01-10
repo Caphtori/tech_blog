@@ -14,6 +14,9 @@ router.get('/:id', async (req, res)=>{
                 }
             ]
         });
+        if (!postData){
+            res.redirect('../');
+        };
         const post = postData.get({ plain: true });
         res.render('post', {
             ...post,

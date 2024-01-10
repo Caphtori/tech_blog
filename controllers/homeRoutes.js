@@ -5,17 +5,18 @@ const { Post, User } = require('../models');
 router.get('/', async (req, res)=>{
     try{
         const postData = await Post.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
+            // include: [
+            //     {
+            //         model: User,
+            //         // attributes: ['username']
+            //     }
+            // ]
+            include: [User]
         });
-        postData = postData.sort((a,b)=>a.date_created-b.date_created).reverse();
-        postData.forEach((post)=>{
-            post.comments = post.comments.sort((a,b)=>a.date_created-b.date_created)
-        })
+        // postData = postData.sort((a,b)=>a.date_created-b.date_created).reverse();
+        // postData.forEach((post)=>{
+        //     post.comments = post.comments.sort((a,b)=>a.date_created-b.date_created)
+        // })
         const posts = postData.map((post)=>post.get({ plain: true }));
 
         res.render('homepage', {

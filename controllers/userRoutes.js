@@ -37,6 +37,9 @@ router.get('/:username', userCheck, async (req, res)=>{
             },
             include: [{ model: Post }, { model: Comment }]
         });
+        if (!userData){
+            res.redirect('../');
+        };
         const user = userData.get({ plain: true });
         res.render('profile', {
             ...user,
