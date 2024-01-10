@@ -1,0 +1,22 @@
+{{#each posts as |post| }}
+<div class="hp-post_card">
+    <div class="hp-post-header">
+        <h2>
+            <a href="/p/{{post.id}}">{{post.title}}</a>
+        </h2>
+    </div>
+    <div class="hp-post-details">
+        <div class="hp-namecard">
+            <p>By:</p>
+            <a href="/u/{{user.username}}">{{user.username}}</a>
+        </div>
+        <p>Posted: {{format_date post.date_created}}</p>
+    </div>
+    <div class="post-preview-card">
+        <p>{{post_preview post.body}}</p>
+    </div>
+    <div class="hp-post-footer">
+        <p>{{comments.length}} Comments</p>
+    </div>
+</div>
+{{/each}}
