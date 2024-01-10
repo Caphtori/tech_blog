@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tech Blog</h1>
+        <nav class="home_nav">
+            <ul>
+                {{#if logged_in}}
+                <li>
+                    <a href="/u/me">Profile</a>
+                </li>
+                <li>
+                    <p id="logout">Logout</p>
+                </li>
+                {{#else}}
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <li>
+                    <a href="/signup">Sign Up</a>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+    <main class="main_container">
+        
+    </main>
+    
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+</body>
+
+</html>
