@@ -43,6 +43,11 @@ a:hover{
     color: var(--hover);
 }
 
+.logout:hover{
+    cursor: pointer;
+    color: var(--hover);
+}
+
 /* Main */
 .home-nav{
     display: flex;
