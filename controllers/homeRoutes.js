@@ -12,6 +12,10 @@ router.get('/', async (req, res)=>{
                 }
             ]
         });
+        postData = postData.sort((a,b)=>a.date_created-b.date_created).reverse();
+        postData.forEach((post)=>{
+            post.comments = post.comments.sort((a,b)=>a.date_created-b.date_created)
+        })
         const posts = postData.map((post)=>post.get({ plain: true }));
 
         res.render('homepage', {
