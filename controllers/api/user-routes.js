@@ -113,7 +113,7 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     res.status(400).json({ message: `${req.body.password}` });
-  }
+  };
 });
 
 
@@ -121,6 +121,7 @@ router.post('/logout', async (req, res) => {
   if (req.session.logged_in){
     req.session.destroy(()=>{
       res.status(204).end();
+      // res.status(204).redirect('../');
     });
   } else {
     res.status(404).end();
