@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="profile-card">
+        <div class="profile-header">
+            {{#if currentUser}}
+            <h2>My Posts</h2>
+            {{else}}
+            <h2>Posts by {{username}}</h2>
+            {{/if}}
+        </div>
+        {{#if currentUser}}
+        <div class="newpost-card">
+            <button class="newpost-btn" onclick=window.location.href>New Post</button>
+        </div>
+        {{/if}}
+    </div>
+    
+    {{#each posts}}
+    <div class="post_card">
+        <div class="post-header">
+            <h2>
+                <a href="/p/{{id}}">{{title}}</a>
+            </h2>
+        </div>
+        <div class="post-details">
+            <p>Posted: {{format_date date_created}}</p>
+        </div>
+        <div class="post-body">
+            <p>{{post_preview body}}</p>
+        </div>
+        <div class="post-footer">
+            {{#if ../currentUser}}
+            {{!-- <a href="">Edit</a> --}}
+            <ul class="post-options">
+                <li>
+                    <p id="edit-post">Edit</p>
+                </li>
+                <li>
+                    <p id="delete-post">Delete</p>
+                </li>
+            </ul>
+            {{/if}}
+        </div>
+    {{/each}}
+</div>

@@ -3,30 +3,31 @@ const authenticate = require('../utils/auth.js');
 const userCheck = require('../utils/userCheck.js');
 const { Post, User, Comment } = require('../models');
 
-router.get('/me', authenticate, async (req, res)=>{
-    try{
-        const userData = await User.findByPk({
-            where: {
-                id: req.session.id
-            },
-            attributes: {
-                exclude: ['password']
-            },
-            include: [{ model: Post }, { model: Comment }]
-        });
-        const user = userData.get({ plain: true });
+// router.get('/me', authenticate, async (req, res)=>{
+//     try{
+//         const userData = await User.findByPk({
+//             where: {
+//                 id: req.session.id
+//             },
+//             attributes: {
+//                 exclude: ['password']
+//             },
+//             include: [{ model: Post }, { model: Comment }]
+//         });
+//         const user = userData.get({ plain: true });
 
-        res.render('myProfile', {
-            ...user,
-            logged_in: true
-        });
+//         res.render('dashboard', {
+//             ...user,
+//             logged_in: true
+//         });
 
-    } catch(err){
-        res.status(500).json(err);
-    };
-});
+//     } catch(err){
+//         res.status(500).json(err);
+//     };
+// });
 
-router.get('/:username', userCheck, async (req, res)=>{
+// router.get('/:username', userCheck, async (req, res)=>{
+router.get('/:username', async (req, res)=>{
     try{
         const userData = await User.findOne({
             where: {
@@ -40,10 +41,13 @@ router.get('/:username', userCheck, async (req, res)=>{
         if (!userData){
             res.redirect('../');
         };
+        const currentUser = (req.params.username===req.session.username);
+        console.log(currentUser)
         const user = userData.get({ plain: true });
-        res.render('profile', {
+        res.render('dashboard', {
             ...user,
-            logged_in: req.session.logged_in
+            currentUser,
+            logged_in: req.session.logged_in,
         });
     }catch(err){
         res.status(500).json(err);
