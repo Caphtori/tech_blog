@@ -14,6 +14,18 @@ const signupHandler= async(event)=>{
             headers: { 'Content-Type': 'application/json' },
         })
         if (response.ok){
+            await fetch('/api/user/logout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            });
+            await fetch('/api/user/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                  username: username,
+                  password: password,
+                }),
+                headers: { 'Content-Type': 'application/json' },
+              });
             document.location.replace('/');
         } else {
             alert(response.statusText);

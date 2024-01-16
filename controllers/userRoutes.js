@@ -27,6 +27,9 @@ const { Post, User, Comment } = require('../models');
 // });
 
 // router.get('/:username', userCheck, async (req, res)=>{
+router.get('/', authenticate, (req, res)=>{
+    res.redirect(`./${req.session.username}`)
+})
 router.get('/:username', async (req, res)=>{
     try{
         const userData = await User.findOne({
@@ -53,5 +56,33 @@ router.get('/:username', async (req, res)=>{
         res.status(500).json(err);
     };
 });
+
+// router.post('/:username/new', authenticate, async (req, res)=>{
+//     try{
+//         if (req.params.username!=req.session.username){
+//             res.redirect('../');
+//         }
+//         const user = await User.findOne({
+//             where: {
+//                 username: req.params.username
+//             },
+//             attributes: {
+//                 exclude: ['email', 'password']
+//             },
+//             include: [{ model: Post }, { model: Comment }]
+//         });
+//         if (!userData){
+//             res.redirect('../');
+//         };
+//         res.render('post-write', {
+//             ...user,
+//             title: '',
+//             body: '',
+//             logged_in: req.session.logged_in
+//         });
+//     }catch(err){
+//         res.status(500).json(err);
+//     };
+// })
 
 module.exports = router;

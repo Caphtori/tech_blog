@@ -18,18 +18,8 @@
         {{else}}
         <p>0 Comments</p>
         {{/if}}
-        {{#if logged_in}}
-        {{!-- If statement for currentUser --}}
-        <ul>
-            <li>
-                <a href="/api/post/edit/{{id}}">Edit</a>
-            </li>
-            <li>
-                <a href="/api/post/delete/{{id}}">Delete</a>
-            </li>
-        </ul>
-        {{else}}
-        <a href="/login">Login to participate</a>
+        {{#if currentUser}}
+        {{> post-options}}
         {{/if}}
     </div>
 </section>

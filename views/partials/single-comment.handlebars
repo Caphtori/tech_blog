@@ -9,19 +9,4 @@
     <div class="post-body">
         {{body}}
     </div>
-    <div class="post-footer">
-        {{#if logged_in}}
-        {{!-- If statement for currentUser --}}
-        <ul>
-            <li>
-                <a href="/api/post/edit/{{id}}">Edit</a>
-            </li>
-            <li>
-                <a href="/api/post/delete/{{id}}">Delete</a>
-            </li>
-        </ul>
-        {{else}}
-        <a href="/login">Login to participate</a>
-        {{/if}}
-    </div>
 </section>
