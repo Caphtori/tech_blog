@@ -84,6 +84,7 @@ a:hover{
 .post_card{
     display: flex;
     flex-direction: column;
+    min-width: 80vw;
     width:100%;
 }
 
@@ -271,6 +272,10 @@ a:hover{
     flex-direction: row;
     gap: 0.5rem;
 }
+.post-options p:hover{
+    color: var(--hover);
+    cursor: pointer;
+}
 /* /Dashboard */
 
 /* Post Write */
@@ -285,4 +290,28 @@ a:hover{
 .write-box textarea{
     min-height: 50vh;
 }
+
+.write-box button{
+    background-color: var(--color4);
+    padding:1rem;
+    align-self: end;
+    border-radius: 10px;
+    max-width: 10%;
+    display: flex;
+}
+
+.write-box button:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+}
 /* /Post Write */
+
+.comment-input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comment-input button{
+    max-width: 10%;
+}

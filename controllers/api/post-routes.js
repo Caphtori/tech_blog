@@ -18,6 +18,7 @@ router.post('/', authorization, async (req, res) => {
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
+      user_name: req.session.username
     });
 
     res.status(200).json(newPost);
@@ -26,25 +27,38 @@ router.post('/', authorization, async (req, res) => {
   };
 });
 
-router.put('/edit/:id', authorization, async (req, res)=>{
-  try{
-    const postData = Post.update(req.body, {
+// router.put('/:id', async (req, res)=>{
+//   try{
+//     const [postData] = Post.update(req.body, {
+//       where: {
+//         id: req.params.id
+//       }
+//     });
+//     if (!postData){
+//       res.status(404).json({ message: "Post not found." });
+//       return
+//     }
+//   } catch(err){
+//     res.status(400).json(err);
+//   };
+// });
+
+router.put('/:id', authorization, async (req, res) => {
+  try {
+    const [postData] = await Post.update(req.body, {
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     });
-    if (!postData){
-      res.status(404).json({ message: "Post not found." });
-      return
-    }
-  } catch(err){
-    res.status(400).json(err);
-  };
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.delete('/delete/:id', authorization, async (req, res)=>{
+router.delete('/:id', authorization, async (req, res)=>{
   try{
-    const postData = Post.destroy({
+    const [postData] = Post.destroy({
       where: {
         id: req.params.id
       }

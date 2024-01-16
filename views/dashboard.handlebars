@@ -9,7 +9,7 @@
         </div>
         {{#if currentUser}}
         <div class="newpost-card">
-            <button class="newpost-btn" onclick=window.location.href>New Post</button>
+            <button class="newpost-btn" id="newpost-btn">New Post</button>
         </div>
         {{/if}}
     </div>
@@ -30,15 +30,11 @@
         <div class="post-footer">
             {{#if ../currentUser}}
             {{!-- <a href="">Edit</a> --}}
-            <ul class="post-options">
-                <li>
-                    <p id="edit-post">Edit</p>
-                </li>
-                <li>
-                    <p id="delete-post">Delete</p>
-                </li>
-            </ul>
+            {{> post-options}}
             {{/if}}
         </div>
     {{/each}}
 </div>
+
+<script src="/js/dashboard.js"></script>
+<script src="/js/deletePost.js"></script>

@@ -3,11 +3,13 @@
     {{> single-post}}
     </section>
     {{#if logged_in}}
-    <section class="comment-input">
+    <form class="comment-input">
         <h3>Leave a Comment:</h3>
         <textarea name="comment-input" id="comment-input" cols="30" rows="10"></textarea>
         <button id="comment-submit" class="submit-btn" >Submit</button>
-    </section>
+        <input type="hidden" id="hidden-postId" value="{{id}}">
+        <input type="hidden" id="hidden-userId" value="{{user_id}}">
+    </form>
     {{/if}}
     <section class="comment-section">
         <div class="comments-header">
@@ -24,3 +26,6 @@
         {{/if}}
     </section>
 </section>
+
+<script src="/js/saveComment.js"></script>
+<script src="/js/deletePost.js"></script>

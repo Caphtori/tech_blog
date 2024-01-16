@@ -19,11 +19,14 @@ router.get('/:id', async (req, res)=>{
         if (!postData){
             res.redirect('../');
         };
+        const currentUser = (postData.user_id===req.session.user_id);
+        console.log(currentUser)
         const post = postData.get({ plain: true });
         res.render('post-page', {
             ...post,
             logged_in: req.session.logged_in,
-            // currentUser: req.session.user.id
+            user_id: req.session.user_id,
+            currentUser
         });
     } catch(err){
         res.status(500).json(err);
@@ -54,7 +57,10 @@ router.get('/:id', async (req, res)=>{
 router.get('/', authenticate, (req, res)=>{
     res.render('post-write',{
         title: '',
-        body: ''
+        body: '',
+        user_id: req.session.user_id,
+        logged_in: req.session.logged_in,
+        new: true
     })
 })
 
@@ -73,12 +79,21 @@ router.get('/:id/edit', authenticate, async (req, res)=>{
             ]
         });
         if (!postData){
-            res.redirect('../');
+            res.redirect('../../');
         };
+        
+        if (postData.user_id!=req.session.user_id){
+            res.redirect('../../');
+            // console.log(`Post Author: ${postData.user_id}`)
+            // console.log(`Session: ${req.session.user_id}`)
+        }
         const post = postData.get({ plain: true });
+        
+        
         res.render('post-write', {
             ...post,
             logged_in: req.session.logged_in,
+            new: false
             // currentUser: req.session.user.id
         });
     } catch(err){

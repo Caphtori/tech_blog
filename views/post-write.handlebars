@@ -1,5 +1,19 @@
-<div class="write-box">
-    <input type="text" name="npost-write-title" class="post-write-title" id="post-write-title" value="{{value}}">
-    <textarea class="post-write-area" id="post-write-area" value="{{value}}"></textarea>
-    <button class="save-post-btn" id="save-post-btn">Save</button>
-</div>
+<form class="write-box">
+    <input type="text" name="npost-write-title" class="post-write-title" id="post-write-title" value="{{title}}">
+    <textarea class="post-write-body" id="post-write-body">{{body}}</textarea>
+    {{#if new}}
+    {{!-- <button class="save-post-btn" id="save-post-btn" data-userId="{{user_id}}" data-username="{{username}}">Save</button>
+    <input type="hidden" id="hidden-userId" value="{{user_id}}"> --}}
+    <button class="save-post-btn" id="save-post-btn" data-userId="{{id}}" data-username="{{username}}">Save</button>
+    <input type="hidden" id="hidden-userId" value="{{id}}">
+    {{else}}
+    <button class="save-post-btn" id="save-post-btn" data-postId="{{id}}">Save</button>
+    <input type="hidden" id="hiddenValue" value="{{id}}">
+    {{/if}}
+</form>
+
+{{#if new}}
+<script src="/js/savePost.js"></script>
+{{else}}
+<script src="/js/editPost.js"></script>
+{{/if}}
